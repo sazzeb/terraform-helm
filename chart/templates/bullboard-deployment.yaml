@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bullboard
+  namespace: checklist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bullboard
+  template:
+    metadata:
+      labels:
+        app: bullboard
+    spec:
+      containers:
+        - name: bullboard
+          image: venatum/bull-board:latest   # :contentReference[oaicite:0]{index=0}&#8203;:contentReference[oaicite:1]{index=1}
+          ports:
+            - containerPort: 3000

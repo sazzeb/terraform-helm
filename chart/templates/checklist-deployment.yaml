@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checklist-service
+  namespace: checklist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: checklist-service
+  template:
+    metadata:
+      labels:
+        app: checklist-service
+    spec:
+      containers:
+        - name: checklist-service
+          image: sazzeb/checklist-service:latest  # :contentReference[oaicite:4]{index=4}&#8203;:contentReference[oaicite:5]{index=5}
+          ports:
+            - containerPort: 9009
+          envFrom:
+            - secretRef:
+                name: full-env-secret

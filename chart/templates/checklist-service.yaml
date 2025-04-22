@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: checklist-service
+  namespace: checklist
+spec:
+  type: LoadBalancer
+  selector:
+    app: checklist-service
+  ports:
+    - port: 80
+      targetPort: 9009                         # :contentReference[oaicite:6]{index=6}&#8203;:contentReference[oaicite:7]{index=7}

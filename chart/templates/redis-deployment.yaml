@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: checklist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:alpine                    # :contentReference[oaicite:10]{index=10}&#8203;:contentReference[oaicite:11]{index=11}
+          ports:
+            - containerPort: 6379
