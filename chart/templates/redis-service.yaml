@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-service
-  namespace: checklist
+  namespace: checklists
 spec:
   type: ClusterIP
   selector:

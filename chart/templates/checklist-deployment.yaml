@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: checklist-service
-  namespace: checklist
+  name: checklist-app
+  namespace: checklists
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: checklist-service
+      app: checklist-app
   template:
     metadata:
       labels:
-        app: checklist-service
+        app: checklist-app
     spec:
       containers:
-        - name: checklist-service
-          image: sazzeb/checklist-service:latest  # :contentReference[oaicite:4]{index=4}&#8203;:contentReference[oaicite:5]{index=5}
+        - name: checklist-app
+          image: sazzeb/checklist-service:latest
           ports:
             - containerPort: 9009
           envFrom:

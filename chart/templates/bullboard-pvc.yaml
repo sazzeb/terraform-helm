@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: bullboard-pvc
-  namespace: checklist
+  namespace: checklists
 spec:
   accessModes:
     - ReadWriteOnce

@@ -54,3 +54,4 @@ terragrunt-debug.tfvars.json
 # Chart dependencies
 **/charts/*.tgz
 
+digital

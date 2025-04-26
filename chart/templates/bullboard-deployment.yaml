@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bullboard
-  namespace: checklist
+  namespace: checklists
 spec:
   replicas: 1
   selector:
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: bullboard
-          image: venatum/bull-board:latest   # :contentReference[oaicite:0]{index=0}&#8203;:contentReference[oaicite:1]{index=1}
+          image: venatum/bull-board:latest
           ports:
             - containerPort: 3000
